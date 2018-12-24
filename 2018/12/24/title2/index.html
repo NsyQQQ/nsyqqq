@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="js 字符串操作函数我这里只是列举了常用的字符串函数，具体使用方法，请参考网址。 concat() – 将两个或多个字符的文本组合起来，返回一个新的字符串。 indexOf() – 返回字符串中一个子串第一处出现的索引。如果没有匹配项，返回 -1 。 charAt() – 返回指定位置的字符。 lastIndexOf() – 返回字符串中一个子串最后一处出现的索引，如果没有匹配项，返回 -1 。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2018最新Web前端经典面试试题及答案（2）">
+<meta property="og:url" content="http://yoursite.com/2018/12/24/title2/index.html">
+<meta property="og:site_name" content="Nsai">
+<meta property="og:description" content="js 字符串操作函数我这里只是列举了常用的字符串函数，具体使用方法，请参考网址。 concat() – 将两个或多个字符的文本组合起来，返回一个新的字符串。 indexOf() – 返回字符串中一个子串第一处出现的索引。如果没有匹配项，返回 -1 。 charAt() – 返回指定位置的字符。 lastIndexOf() – 返回字符串中一个子串最后一处出现的索引，如果没有匹配项，返回 -1 。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-24T07:20:03.507Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2018最新Web前端经典面试试题及答案（2）">
+<meta name="twitter:description" content="js 字符串操作函数我这里只是列举了常用的字符串函数，具体使用方法，请参考网址。 concat() – 将两个或多个字符的文本组合起来，返回一个新的字符串。 indexOf() – 返回字符串中一个子串第一处出现的索引。如果没有匹配项，返回 -1 。 charAt() – 返回指定位置的字符。 lastIndexOf() – 返回字符串中一个子串最后一处出现的索引，如果没有匹配项，返回 -1 。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/24/title2/">
+
+
+
+
+
+  <title>2018最新Web前端经典面试试题及答案（2） | Nsai</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Nsai</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/24/title2/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="宁尚义">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nsai">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">2018最新Web前端经典面试试题及答案（2）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-24T15:07:22+08:00">
+                2018-12-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="js-字符串操作函数"><a href="#js-字符串操作函数" class="headerlink" title="js 字符串操作函数"></a>js 字符串操作函数</h2><p>我这里只是列举了常用的字符串函数，具体使用方法，请<a href="http://www.w3school.com.cn/jsref/jsref_obj_string.asp" target="_blank" rel="noopener">参考网址</a>。</p>
+<p>concat() – 将两个或多个字符的文本组合起来，返回一个新的字符串。</p>
+<p>indexOf() – 返回字符串中一个子串第一处出现的索引。如果没有匹配项，返回 -1 。</p>
+<p>charAt() – 返回指定位置的字符。</p>
+<p>lastIndexOf() – 返回字符串中一个子串最后一处出现的索引，如果没有匹配项，返回 -1 。</p>
+<p>match() – 检查一个字符串是否匹配一个正则表达式。</p>
+<p>substr() 函数 – 返回从string的startPos位置，长度为length的字符串</p>
+<p>substring() – 返回字符串的一个子串。传入参数是起始位置和结束位置。</p>
+<p>slice() – 提取字符串的一部分，并返回一个新字符串。</p>
+<p>replace() – 用来查找匹配一个正则表达式的字符串，然后使用新字符串代替匹配的字符串。</p>
+<p>search() – 执行一个正则表达式匹配查找。如果查找成功，返回字符串中匹配的索引值。否则返回 -1 。</p>
+<p>split() – 通过将字符串划分成子串，将一个字符串做成一个字符串数组。</p>
+<p>length – 返回字符串的长度，所谓字符串的长度是指其包含的字符的个数。</p>
+<p>toLowerCase() – 将整个字符串转成小写字母。</p>
+<p>toUpperCase() – 将整个字符串转成大写字母。</p>
+<h2 id="怎样添加、移除、移动、复制、创建和查找节点？"><a href="#怎样添加、移除、移动、复制、创建和查找节点？" class="headerlink" title="怎样添加、移除、移动、复制、创建和查找节点？"></a>怎样添加、移除、移动、复制、创建和查找节点？</h2><h3 id="1）创建新节点"><a href="#1）创建新节点" class="headerlink" title="1）创建新节点"></a>1）创建新节点</h3><p>　　createDocumentFragment() //创建一个DOM片段<br>　　createElement() //创建一个具体的元素<br>　　createTextNode() //创建一个文本节点</p>
+<h3 id="2）添加、移除、替换、插入"><a href="#2）添加、移除、替换、插入" class="headerlink" title="2）添加、移除、替换、插入"></a>2）添加、移除、替换、插入</h3><p>　　appendChild() //添加<br>　　removeChild() //移除<br>　　replaceChild() //替换<br>　　insertBefore() //插入</p>
+<h3 id="3）查找"><a href="#3）查找" class="headerlink" title="3）查找"></a>3）查找</h3><p>　　getElementsByTagName() //通过标签名称<br>　　getElementsByName() //通过元素的Name属性的值<br>　　getElementById() //通过元素Id，唯一性</p>
+<h2 id="写出3个使用this的典型应用"><a href="#写出3个使用this的典型应用" class="headerlink" title="写出3个使用this的典型应用"></a>写出3个使用this的典型应用</h2><h3 id="（1）、在html元素事件属性中使用，如："><a href="#（1）、在html元素事件属性中使用，如：" class="headerlink" title="（1）、在html元素事件属性中使用，如："></a>（1）、在html元素事件属性中使用，如：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input <span class="built_in">type</span>=”button” onclick=”showInfo(this);” value=”点击一下”/&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="（2）、构造函数"><a href="#（2）、构造函数" class="headerlink" title="（2）、构造函数"></a>（2）、构造函数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> Animal(name, color) &#123;</span><br><span class="line">　　this.name = name;</span><br><span class="line">　　this.color = color;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="（3）、input点击，获取值"><a href="#（3）、input点击，获取值" class="headerlink" title="（3）、input点击，获取值"></a>（3）、input点击，获取值</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;input <span class="built_in">type</span>=<span class="string">"button"</span> id=<span class="string">"text"</span> value=<span class="string">"点击一下"</span> /&gt;</span><br><span class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    var btn = document.getElementById(<span class="string">"text"</span>);</span><br><span class="line">    btn.onclick = <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">        alert(this.value);    //此处的this是按钮元素</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="（4）、apply-call-求数组最值"><a href="#（4）、apply-call-求数组最值" class="headerlink" title="（4）、apply()/call()求数组最值"></a>（4）、apply()/call()求数组最值</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var  numbers = [5, 458 , 120 , -215 ]; </span><br><span class="line">var  maxInNumbers = Math.max.apply(this, numbers);  </span><br><span class="line">console.log(maxInNumbers);  // 458</span><br><span class="line">var maxInNumbers = Math.max.call(this,5, 458 , 120 , -215); </span><br><span class="line">console.log(maxInNumbers);  // 458</span><br></pre></td></tr></table></figure>
+<h2 id="比较typeof与instanceof？"><a href="#比较typeof与instanceof？" class="headerlink" title="比较typeof与instanceof？"></a>比较typeof与instanceof？</h2><p>相同点：JavaScript 中 typeof 和 instanceof 常用来判断一个变量是否为空，或者是什么类型的。</p>
+<p>typeof的定义和用法：返回值是一个字符串，用来说明变量的数据类型。</p>
+<p>细节：</p>
+<p>(1)、typeof 一般只能返回如下几个结果：number,boolean,string,function,object,undefined。</p>
+<p>(2)、typeof 来获取一个变量是否存在，如 if(typeof a!=”undefined”){alert(“ok”)}，而不要去使用 if(a) 因为如果 a 不存在（未声明）则会出错。</p>
+<p>(3)、对于 Array,Null 等特殊对象使用 typeof 一律返回 object，这正是 typeof 的局限性。</p>
+<p>Instanceof定义和用法：instanceof 用于判断一个变量是否属于某个对象的实例。</p>
+<p>实例演示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a instanceof b?alert(<span class="string">"true"</span>):alert(<span class="string">"false"</span>); //a是b的实例？真:假</span><br><span class="line"></span><br><span class="line">var a = new Array(); </span><br><span class="line">alert(a instanceof Array);  // <span class="literal">true</span></span><br><span class="line">alert(a instanceof Object)  // <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>如上，会返回 true，同时 alert(a instanceof Object) 也会返回 true;这是因为 Array 是 object 的子类。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">test</span></span>()&#123;&#125;;</span><br><span class="line">var a = new <span class="built_in">test</span>();</span><br><span class="line">alert(a instanceof <span class="built_in">test</span>)   // <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>细节：</p>
+<p>(1)、如下，得到的结果为‘N’,这里的 instanceof 测试的 object 是指 js 语法中的 object，不是指 dom 模型对象。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (window instanceof Object)&#123; alert(<span class="string">'Y'</span>)&#125; <span class="keyword">else</span> &#123;  alert(<span class="string">'N'</span>);&#125;  // <span class="string">'N'</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="宁尚义 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="宁尚义 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/24/title1/" rel="next" title="2018最新Web前端经典面试试题及答案（1）">
+                <i class="fa fa-chevron-left"></i> 2018最新Web前端经典面试试题及答案（1）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/24/title3/" rel="prev" title="2018最新Web前端经典面试试题及答案（3）">
+                2018最新Web前端经典面试试题及答案（3） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">宁尚义</p>
+              <p class="site-description motion-element" itemprop="description">学无止境，勇攀高峰。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/NsyQQQ" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:1036139994@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/yourname" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/yourname" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.facebook.com/yourname" target="_blank" title="FB Page">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>FB Page</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://youtube.com/yourname" target="_blank" title="YouTube">
+                      
+                        <i class="fa fa-fw fa-youtube"></i>YouTube</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/5642720380" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://wpa.qq.com/msgrd?v=3&uin=1036139994&site=qq&menu=yes" target="_blank" title="QQ">
+                      
+                        <i class="fa fa-fw fa-qq"></i>QQ</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/wdlhao/article/details/79079660" title="2018最新Web前端经典面试试题及答案" target="_blank">2018最新Web前端经典面试试题及答案</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://blog.csdn.net/itcast_cn/article/details/77883162" title="全套Java基础视频教程" target="_blank">全套Java基础视频教程</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#js-字符串操作函数"><span class="nav-number">1.</span> <span class="nav-text">js 字符串操作函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#怎样添加、移除、移动、复制、创建和查找节点？"><span class="nav-number">2.</span> <span class="nav-text">怎样添加、移除、移动、复制、创建和查找节点？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1）创建新节点"><span class="nav-number">2.1.</span> <span class="nav-text">1）创建新节点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2）添加、移除、替换、插入"><span class="nav-number">2.2.</span> <span class="nav-text">2）添加、移除、替换、插入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3）查找"><span class="nav-number">2.3.</span> <span class="nav-text">3）查找</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写出3个使用this的典型应用"><span class="nav-number">3.</span> <span class="nav-text">写出3个使用this的典型应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#（1）、在html元素事件属性中使用，如："><span class="nav-number">3.1.</span> <span class="nav-text">（1）、在html元素事件属性中使用，如：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（2）、构造函数"><span class="nav-number">3.2.</span> <span class="nav-text">（2）、构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（3）、input点击，获取值"><span class="nav-number">3.3.</span> <span class="nav-text">（3）、input点击，获取值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（4）、apply-call-求数组最值"><span class="nav-number">3.4.</span> <span class="nav-text">（4）、apply()/call()求数组最值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#比较typeof与instanceof？"><span class="nav-number">4.</span> <span class="nav-text">比较typeof与instanceof？</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">宁尚义</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
