@@ -1,16 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[git命令笔记]]></title>
+    <url>%2F2018%2F12%2F29%2Ftitle11%2F</url>
+    <content type="text"><![CDATA[git基本命令1.git常用命令一般配置123git --version //查看git的版本信息git config --global user.name //获取当前登录的用户git config --global user.email //获取当前登录用户的邮箱 登录git1234/* 如果刚没有获取到用户配置，则只能拉取代码，不能修改 要是使用git，你要告诉git是谁在使用*/git config --global user.name &apos;userName&apos; //设置git账户，userName为你的git账号git config --global user.email &apos;email&apos; //email为你的邮箱地址 创建一个文件夹12mkdir nodejs //创建文件夹nodejscd nodejs //切换到nodejs目录下 初始化git仓库1git init //在nodejs文件夹下初始化一个仓库，此时文件里会到一个.git的隐藏文件夹 创建忽略文件12345touch .gitignore //不需要服务器端提交的内容可以写到忽略文件里 /* .git .idea */ 查看目录1ls -al 创建文件并写入内容如果文件不存在则会创建文件 12echo &quot;hello git&quot; &gt; index.html //将&apos;hello git&apos; 写入到index.html中 单个&gt;箭头表示写入， &gt;&gt;表示追加 查看文件内容1cat index.html 增加到暂存区中12git add index.htmlgit add -A //全部添加到缓存区 增加到版本库中1git commit -m &apos;备注信息&apos; 查看版本1git log --oneline 比较差异比较的是暂存区和工作区的差异 1git diff 比较的是暂存区和历史区的差异 1git diff --cached 比较的是历史区和工作区的差异（修改） 1git diff master 撤回内容(如果修改了工作区的文件后发现改错了，可以用暂存区或者版本库里的文件替换掉工作区的文件) 用暂存区中的内容或者版本库中的内容覆盖掉工作区 1git checkout index.html 取消增加到暂存区的内容（添加时） 123git reset HEAD index.html//显示目录的状体 有没有添加或者修改文件git status 删除本地文件1rm fileName 删除暂存区保证当前工作区中没有index.html 1git rm index.html --cached 使用–cached 表示只删除缓存区中的内容 回滚版本回滚最近的一个版本 git log 1git reset --hard HEAD/commit_id 回滚到未来1git reflog 2.分支管理创建分支1git branch dev 切换分支1git checkout dev 创建分支并切换分支1git checkout -b dev 删除分支1git branch -d dev 在分支上提交新的版本1git commit -a -m &apos;dev1&apos; 合并分支1git merge dev 分支的合并后显示log1git log --oneline --graph --decorate 在分支开发的过程中遇到其他问题需要切换其他分支保留写好的内容在切换到主干 保留内容 1git stash 在次切换分之后需要应用一下保留的内容1git stash apply 丢掉保存的内容1git stash drop 使用并丢掉1git stash pop 最佳分支有的时候开发需要合并指定的内容，而不是合并所有的提交，所以我们需要挑选最好的，自己生产版本。 合并分支把树杈掰到主干上1git rebase 3.添加远程的仓库push -u-u参数 upstream 1git push origin master -u //获取最新代码 连接远程仓库1git remote add origin 仓库的地址 查看远程仓库1git remote -v 删除远程仓库1git remote rm origin 4.git常用命令安装及配置：Ubuntu下安装：sudo apt-get install git配置用户名：git config –global user.name “你的名字”配置e-mail：git config –global user.email “你的邮箱@xx.com” 与添加有关的：将当前目录变为仓库：git init将文件添加到暂存区：git add 文件名 [可选：另一个文件名]将暂存区提交到仓库：git commit –m “描述” 与查询有关的：查询仓库状态：git status比较文件差异（请在git add之前使用）：git diff 文件名查看仓库历史记录(详细)：git log查看仓库历史记录(单行)：git log –pretty=online 或 git log –online查看所有版本的commit ID：git reflog 与撤销有关的：撤销工作区的修改：git checkout – 文件名撤销暂存区的修改：git reset HEAD 文件名回退到历史版本：git reset –hard 该版本ID回退到上个版本：git reset –hard HEAD^上上版本是HEAD^^，也可用HEAD~2表示，以此类推 与标签有关的：为当前版本打标签：git tag 标签名为历史版本打标签：git tag 标签名 该版本ID指定标签说明：git tag –a 标签名 –m “标签说明” [可选：版本ID]查看所有标签：git tag查看某一标签：git show 标签名删除某一标签：git tag –d 标签名 与GitHub有关的：先有本地库，后有远程库，将本地库push到远程库关联本地仓库和GitHub库：git remote add origin 网站上的仓库地址第一次将本地仓库推送到GitHub上：git push –u origin master 先有远程库，后有本地库，从远程库clone到本地库从远程库克隆到本地：git clone 网站上的仓库地址 网站地址可以选择HTTPS协议（https://github.com...）、SSH协议（git@github.com...）。如果选择SSH协议，必须将Ubuntu的公钥添加到GitHub上。见下一步 SSH Key生成SSH Key：ssh-keygen –t rsa –C “你的邮箱@xx.com”生成Key时弹出选项，回车选择默认即可。Key保存位置：/root/.ssh登陆GitHub，创建new SSH key，其内容为/root/.ssh/id_rsa.pub中文本 已经有了本地库和远程库，二者实现同步本地库的改动提交到远程库：git push origin master更新本地库至远程库的最新改动：git pull]]></content>
+      <categories>
+        <category>学习</category>
+        <category>笔记</category>
+        <category>git和github</category>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[git和github]]></title>
+    <url>%2F2018%2F12%2F29%2Ftitle10%2F</url>
+    <content type="text"><![CDATA[一、什么是git和github？1.GIT（分布式版本控制系统）对于分布式版本控制系统，每个用户中都有自己在本地的仓库用来管理版本控制，每个客户端也同时是一个服务器。同时也可以用一个专门的服务器的仓库用来管理。 分布式版本控制系统的不同用户之间，只要是在同一个局域网都是想通的，入上图所示。所以某一个用户协同工作的服务器发生故障，并不会影响到整个团队。 与集中式版本控制系统相比： 1) 分布式版本控制系统更安全，因为每个客户端都是一个服务器，拥有一个完整地版本库，包括所有的历史记录等； 2) 工作效率会更高，因为对于小的修改，用户可以先把新版本的文件提交到本地的仓库，本地提交的速度远远快于“远程”提交； 3) 如果是在同一个局域网，不同用户之间可以相互访问； 4) 对于非局域网协同工作的，可以创建一个连接互联网的的服务器仓库。 Git是一个开源的分布式版本控制系统，可以有效、高速地处理从很小到非常大的项目版本管理。 Git 是用于 Linux内核开发的版本控制工具。与常用的版本控制工具 CVS, Subversion 等不同，它采用了分布式版本库的方式，不必服务器端软件支持，使源代码的发布和交流极其方便。 Git 的速度很快，这对于诸如 Linux kernel 这样的大项目来说自然很重要。 Git 最为出色的是它的合并跟踪（merge tracing）能力。 目前GIT已经可以在windows下使用，主要方法有二：msysgit和Cygwin。Cygwin和Linux使用方法类似，Windows版本的GIT提供了友好的GUI(图形界面)，安装后很快可以上手。 2.githubgitHub是一个面向开源及私有软件项目的托管平台，因为只支持git 作为唯一的版本库格式进行托管，故名gitHub。 gitHub于2008年4月10日正式上线，除了git代码仓库托管及基本的 Web管理界面以外，还提供了订阅、讨论组、文本渲染、在线文件编辑器、协作图谱（报表）、代码片段分享（Gist）等功能。目前，其注册用户已经超过350万，托管版本数量也是非常之多，其中不乏知名开源项目 Ruby on Rails、jQuery、python 等。 作为开源代码库以及版本控制系统，Github拥有超过900万开发者用户。随着越来越多的应用程序转移到了云上，Github已经成为了管理软件开发以及发现已有代码的首选方法。 如前所述，作为一个分布式的版本控制系统，在Git中并不存在主库这样的概念，每一份复制出的库都可以独立使用，任何两个库之间的不一致之处都可以进行合并。 GitHub可以托管各种git库，并提供一个web界面，但它与外国的SourceForge、Google Code或中国的coding的服务不同，GitHub的独特卖点在于从另外一个项目进行分支的简易性。为一个项目贡献代码非常简单：首先点击项目站点的“fork”的按钮，然后将代码检出并将修改加入到刚才分出的代码库中，最后通过内建的“pull request”机制向项目负责人申请代码合并。已经有人将GitHub称为代码玩家的MySpace。 GitHub 使用 git 分布式版本控制系统，而 git 最初是 LinusTorvalds 为帮助Linux开发而创造的，它针对的是 Linux 平台，因此 git 和 Windows 从来不是最好的朋友，因为它一点也不像 Windows。GitHub 发布了GitHub for Windows，为 Windows 平台开发者提供了一个易于使用的 Git 图形客户端。 GitHub for Windows 是一个 Metro 风格应用程序，集成了自包含版本的 Git，bash 命令行 shell，PowerShell 的 posh-git 扩展。GitHub 为 Windows 用户提供了一个基本的图形前端去处理大部分常用版本控制任务，可以创建版本库，向本地版本库递交补丁，在本地和远程版本库之间同步。 二、git与github的区别一开始接触git或是github的程序员可能搞不太清楚这些名词到底指代的是什么，所以在这里稍微说明一下。git和github是两个完全不同的概念。 git是一个版本管理工具，是可以在你电脑不联网的情况下，只在本地使用的一个版本管理工具，其作用就是可以让你更好的管理你的程序，比如你原来提交过的内容，以后虽然修改了，但是通过git这个工具，可以把你原来提交的内容重现出来，这样对于你后来才意识到的一些错误的更改，可以进行还原，具体有关git的简介，我觉得有一个教程写的非常的详细，比较适合新手的学习，这是链接：Git教程 关于github，这是一个网站，就是每个程序员自己写的程序，可以在github上建立一个网上的仓库，你每次提交的时候可以把代码提交到网上，这样你的每次提交，别人也都可以看到你的代码，同时别人也可以帮你修改你的代码，这种开源的方式非常方便程序员之间的交流和学习。 github是一个非常适合程序员交流的网站，很多国际上的技术大牛都在github上有自己的开源代码，其他人只要申请个账号就可以随意的看到这些大牛写的程序。同时国内的很多互联网公司如百度，阿里等，也在github上公布有开源的代码，感兴趣的程序员也可以自己查找着看一些。 总结来说，git可以认为是一个软件，能够帮你更好的写程序，github则是一个网站，这个网站可以帮助程序员之间互相交流和学习。]]></content>
+      <categories>
+        <category>学习</category>
+        <category>笔记</category>
+        <category>git和github</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[CSS预处理器（Sass、Less和Stylus）]]></title>
+    <url>%2F2018%2F12%2F29%2Ftitle9%2F</url>
+    <content type="text"><![CDATA[一、什么是Sass、Less和Stylus？Sass、Less和Stylus都属于CSS预处理器，那什么是 CSS 预处理器呢？ CSS预处理器定义了一种新的语言，其基本思想是，用一种专门的编程语言，为CSS增加了一些编程的特性，将CSS作为目标生成文件，然后开发者就 只要使用这种语言进行编码工作。通俗的说，CSS预处理器用一种专门的编程语言，进行web页面样式设计，然后再编译成正常的CSS文件，以供项目使用。 CSS预处理器为CSS增加一些编程的特性，无需考虑浏览器的兼容性问题，例如你可以在CSS中使用变量、简单的逻辑程序、函数等等在编程语言中的一些基 本特性，可以让你的CSS更加简洁、适应性更强、可读性更佳，更易于代码的维护等诸多好处。 CSS预处理器技术已经非常的成熟，而且也涌现出了很多种不同的CSS预处理器语言，比如说：Sass（SCSS）、LESS、Stylus、 Turbine、Swithch CSS、CSS Cacheer、DT CSS等。如此之多的CSS预处理器，那么“我应该选择哪种CSS预处理器？”也相应成了最近网上的一大热门话题，在Linkedin、Twitter、 CSS-Trick、知呼以及各大技术论坛上，很多人为此争论不休。相比过计我们对是否应该使用CSS预处理器的话题而言，这已经是很大的进步了。 到目前为止，在众多优秀的CSS预处理器语言中就属Sass、LESS和Stylus最优秀，讨论的也多，对比的也多。本文将分别从他们产生的背 景、安装、使用语法、异同等几个对比之处向你介绍这三款CSS预处理器语言。相信前端开发工程师会做出自己的选择——我要选择哪款CSS预处理器。 二、为什么要使用CSS预处理器？作为前端开发人员，大家都知道，Js中可以自定义变量，而CSS仅仅是一个标记语言，不是编程语言，因此不可以自定义变量，不可以引用等等。 CSS有具体以下几个缺点： 1.语法不够强大，比如无法嵌套书写，导致模块化开发中需要书写很多重复的选择器；2.没有变量和合理的样式复用机制，使得逻辑上相关的属性值必须以字面量的形式重复输出，导致难以维护。 这就导致了我们在工作中无端增加了许多工作量。而使用CSS预处理器，提供 CSS 缺失的样式层复用机制、减少冗余代码，提高样式代码的可维护性。大大提高了我们的开发效率。 但是，CSS预处理器也不是万金油，CSS的好处在于简便、随时随地被使用和调试。预编译CSS步骤的加入，让我们开发工作流中多了一个环节，调试也变得更麻烦了。更大的问题在于，预编译很容易造成后代选择器的滥用。 所以我们在实际项目中衡量预编译方案时，还是得想想，比起带来的额外维护开销，CSS预处理器有没有解决更大的麻烦。 三、Sass、LESS和Stylus背景介绍为了能更好的了解这三款流行的CSS预处理器，我们先从其背景入手，简单的了解一下各自的背景信息。 1.Sass背景介绍Sass是对CSS（层叠样式表）的语法的一种扩充，诞生于2007年，最早也是最成熟的一款CSS预处理器语言，它可以使用变量、常量、嵌套、混 入、函数等功能，可以更有效有弹性的写出CSS。Sass最后还是会编译出合法的CSS让浏览器使用，也就是说它本身的语法并不太容易让浏览器识别，因为 它不是标准的CSS格式，在它的语法内部可以使用动态变量等，所以它更像一种极简单的动态语言。 其实现在的Sass已经有了两套语法规则：一个依旧是用缩进作为分隔符来区分代码块的；另一套规则和CSS一样采用了大括号（｛｝）作为分隔符。后一种语法规则又名SCSS，在Sass3之后的版本都支持这种语法规则。 注：Sass官网地址：http://sass-lang.com 2.LESS的背景介绍2009年开源的一个项目，受Sass的影响较大，但又使用CSS的语法，让大部分开发者和设计师更容易上手。LESS提供了多种方式能平滑的将写 好的代码转化成标准的CSS代码，在很多流行的框架和工具中已经能经常看到LESS的身影了（例如Twitter的Bootstrap框架就使用了 LESS）。 根据维基百科上的介绍，其实LESS是Alexis Sellier受Sass的影响创建的一个开源项目。当时SASS采用了缩进作为分隔符来区分代码块，而不是CSS中广为使用的大括号（｛｝）。为了让 CSS现有的用户使用起来更佳方便，Alexis开发了LESS并提供了类似CSS的书写功能。 注：LESS的官网：http://lesscss.org 3.Stylus背景介绍Stylus，2010年产生，来自于Node.js社区，主要用来给Node项目进行CSS预处理支持，在此社区之内有一定支持者，在广泛的意义上人气还完全不如Sass和LESS。 Stylus被称为是一种革命性的新语言，提供一个高效、动态、和使用表达方式来生成CSS，以供浏览器使用。Stylus同时支持缩进和CSS常规样式书写规则。 注：Stylus官网：http://learnboost.github.com/stylus 四、Sass和Less的比较不同之处1.Less环境较Sass简单Cass的安装需要安装Ruby环境，Less基于JavaScript，是需要引入Less.js来处理代码输出css到浏览器，也可以在开发环节使用Less，然后编译成css文件，直接放在项目中，有less.app、SimpleLess、CodeKit.app这样的工具，也有在线编辑地址。 2、Less使用较Sass简单LESS 并没有裁剪 CSS 原有的特性，而是在现有 CSS 语法的基础上，为 CSS 加入程序式语言的特性。只要你了解 CSS 基础就可以很容易上手。 3、从功能出发，Sass较Less略强大一些(1) sass有变量和作用域 $variable，like php； #｛$variable｝like ruby； 变量有全局和局部之分，并且有优先级。 (2) sass有函数的概念 @function和@return以及函数参数（还有不定参）可以让你像js开发那样封装你想要的逻辑。 @mixin类似function但缺少像function的编程逻辑，更多的是提高css代码段的复用性和模块化，这个用的人也是最多的。 ruby提供了非常丰富的内置原生api。 (3) 进程控制 条件：@if @else； 循环遍历：@for @each @while 继承：@extend 引用：@import (4) 数据结构 $list类型=数组； $map类型=object；其余的也有string、number、function等类型 4、Less与Sass处理机制不一样前者是通过客户端处理的，后者是通过服务端处理，相比较之下前者解析会比后者慢一点。 5、关于变量在Less和Sass中的唯一区别就是Less用@，Sass用$。相同之处Less和Sass在语法上有些共性，比如下面这些： 1、混入(Mixins)——class中的class；2、参数混入——可以传递参数的class，就像函数一样；3、嵌套规则——Class中嵌套class，从而减少重复的代码；4、运算——CSS中用上数学；5、颜色功能——可以编辑颜色；6、名字空间(namespace)——分组样式，从而可以被调用；7、作用域——局部修改样式；8、JavaScript 赋值——在CSS中使用JavaScript表达式赋值。 五、为什么选择使用Sass而不是Less？1、Sass在市面上有一些成熟的框架，比如说Compass，而且有很多框架也在使用Sass，比如说Foundation。2、就国外讨论的热度来说，Sass绝对优于LESS。3、就学习教程来说，Sass的教程要优于LESS。在国内LESS集中的教程是LESS中文官网，而Sass的中文教程，慢慢在国内也较为普遍。4、Sass也是成熟的CSS预处理器之一，而且有一个稳定，强大的团队在维护。5、同时还有Scss对sass语法进行了改良，Sass 3就变成了Scss(sassy css)。与原来的语法兼容，只是用{}取代了原来的缩进。6、bootstrap（Web框架）最新推出的版本4，使用的就是Sass。]]></content>
+      <categories>
+        <category>学习</category>
+        <category>笔记</category>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>Sass</tag>
+        <tag>Less</tag>
+        <tag>Stylus</tag>
+        <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[CSS3属性笔记]]></title>
     <url>%2F2018%2F12%2F26%2Ftitle8%2F</url>
     <content type="text"><![CDATA[新的边框属性 属性 描述 CSS border-image 设置所有 border-image-* 属性的简写属性。 3 border-radius 设置所有四个 border-*-radius 属性的简写属性。 3 box-shadow 向方框添加一个或多个阴影。 3 新的背景属性 属性 描述 CSS background-clip 规定背景的绘制区域。 3 background-origin 规定背景图片的定位区域。 3 background-size 规定背景图片的尺寸。 3 新的文本属性 属性 描述 CSS hanging-punctuation 规定标点字符是否位于线框之外。 3 punctuation-trim 规定是否对标点字符进行修剪。 3 text-align-last 设置如何对齐最后一行或紧挨着强制换行符之前的行。 3 text-emphasis 向元素的文本应用重点标记以及重点标记的前景色。 3 text-justify 规定当 text-align 设置为 “justify” 时所使用的对齐方法。 3 text-outline 规定文本的轮廓。 3 text-overflow 规定当文本溢出包含元素时发生的事情。 3 text-shadow 向文本添加阴影。 3 text-wrap 规定文本的换行规则。 3 word-break 规定非中日韩文本的换行规则。 3 word-wrap 允许对长的不可分割的单词进行分割并换行到下一行。 3 CSS3 字体描述符下面的表格列出了能够在 @font-face 规则中定义的所有字体描述符： 描述符 值 描述 font-family name 必需。规定字体的名称。 src URL 必需。定义字体文件的 URL。 font-stretch normal condensed ultra-condensed extra-condensed semi-condensed expanded semi-expanded extra-expanded ultra-expanded 可选。定义如何拉伸字体。默认是 “normal”。 font-style ormal italic oblique 可选。定义字体的样式。默认是 “normal”。 font-weight normal bold 可选。定义字体的粗细。默认是 “normal”。 unicode-range unicode-range 可选。定义字体支持的 UNICODE 字符范围。默认是 “U+0-10FFFF”。 新的转换属性 属性 描述 CSS transform 向元素应用 2D 或 3D 转换。 3 transform-origin 允许你改变被转换元素的位置。 3 transform-style 规定被嵌套元素如何在 3D 空间中显示。 3 perspective 规定 3D 元素的透视效果。 3 perspective-origin 规定 3D 元素的底部位置。 3 backface-visibility 定义元素在不面对屏幕时是否可见。 3 过渡属性下面的表格列出了所有的转换属性： 属性 描述 CSS transition 简写属性，用于在一个属性中设置四个过渡属性。 3 transition-property 规定应用过渡的 CSS 属性的名称。 3 transition-duration 定义过渡效果花费的时间。默认是 0。 3 transition-timing-function 规定过渡效果的时间曲线。默认是 “ease”。 3 transition-delay 规定过渡效果何时开始。默认是 0。 3 CSS3 动画属性下面的表格列出了 @keyframes 规则和所有动画属性： 属性 描述 CSS @keyframes 规定动画。 3 animation 所有动画属性的简写属性，除了 animation-play-state 属性。 3 animation-name 规定 @keyframes 动画的名称。 3 animation-duration 规定动画完成一个周期所花费的秒或毫秒。默认是 0。 3 animation-timing-function 规定动画的速度曲线。默认是 “ease”。 3 animation-delay 规定动画何时开始。默认是 0。 3 animation-iteration-count 规定动画被播放的次数。默认是 1。 3 animation-direction 规定动画是否在下一周期逆向地播放。默认是 “normal”。 3 animation-play-state 规定动画是否正在运行或暂停。默认是 “running”。 3 animation-fill-mode 规定对象动画时间之外的状态。 3 3 新的多列属性下面的表格列出了所有的转换属性： 属性 描述 CSS column-count 规定元素应该被分隔的列数。 3 column-fill 规定如何填充列。 3 column-gap 规定列之间的间隔。 3 column-rule 设置所有 column-rule-* 属性的简写属性。 3 column-rule-color 规定列之间规则的颜色。 3 column-rule-style 规定列之间规则的样式。 3 column-rule-width 规定列之间规则的宽度。 3 column-span 规定元素应该横跨的列数。 3 column-width 规定列的宽度。 3 columns 规定设置 column-width 和 column-count 的简写属性。 3 新的用户界面属性下面的表格列出了所有的转换属性： 属性 描述 CSS appearance 允许您将元素设置为标准用户界面元素的外观 3 box-sizing 允许您以确切的方式定义适应某个区域的具体内容。 3 icon 为创作者提供使用图标化等价物来设置元素样式的能力。 3 nav-down 规定在使用 arrow-down 导航键时向何处导航。 3 nav-index 设置元素的 tab 键控制次序。 3 nav-left 规定在使用 arrow-left 导航键时向何处导航。 3 nav-right 规定在使用 arrow-right 导航键时向何处导航。 3 nav-up 规定在使用 arrow-up 导航键时向何处导航。 3 outline-offset 对轮廓进行偏移，并在超出边框边缘的位置绘制轮廓。 3 resize 规定是否可由用户对元素的尺寸进行调整。 3]]></content>
       <categories>
         <category>学习</category>
         <category>笔记</category>
-        <category>css3</category>
+        <category>CSS</category>
       </categories>
       <tags>
-        <tag>css3</tag>
+        <tag>CSS3</tag>
       </tags>
   </entry>
   <entry>
@@ -33,12 +77,12 @@
         <category>学习</category>
       </categories>
       <tags>
+        <tag>git</tag>
+        <tag>github</tag>
         <tag>hexo</tag>
         <tag>node.js</tag>
         <tag>npm</tag>
-        <tag>git</tag>
         <tag>next</tag>
-        <tag>github</tag>
       </tags>
   </entry>
   <entry>
