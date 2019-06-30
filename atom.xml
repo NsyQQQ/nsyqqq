@@ -411,9 +411,9 @@
     
       <category term="git" scheme="http://yoursite.com/tags/git/"/>
     
-      <category term="github" scheme="http://yoursite.com/tags/github/"/>
-    
       <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+      <category term="github" scheme="http://yoursite.com/tags/github/"/>
     
       <category term="node.js" scheme="http://yoursite.com/tags/node-js/"/>
     
